@@ -1,0 +1,1 @@
+//Aquí importamos las funciones del api.js y creamos la funcion mdlinks
