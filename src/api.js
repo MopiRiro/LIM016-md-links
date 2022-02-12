@@ -65,7 +65,7 @@ export const filesExtensionMdPath = (ePath) => {
     }
     return mdArray.flat(Infinity);
 };
-// console.log(filesExtensionMdPath(rutaPrueba));
+//console.log(filesExtensionMdPath(rutaPrueba));
 
 //FUNCION 7: Extraer links
 //Expresiones regulares para reconocer la estrucutra de los links
@@ -95,7 +95,7 @@ export const getLinksWithProperties = (ePath) => {
     })
     return arrayPrueba;
 };
-    // console.log(getLinksWithProperties(rutaPrueba));
+    console.log(getLinksWithProperties(rutaPrueba));
 
 
 //FUNCION 8: Validar si tiene links

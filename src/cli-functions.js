@@ -20,14 +20,14 @@ export const uniqueLinks = (e) => {
     let eMap = e.map(item=>{
         return [item.href,item]
     });
-    var personasMapArr = new Map(eMap); // Pares de clave y valor
-    let unique = [...personasMapArr.values()]; // Conversión a un array
+    var eMapArr = new Map(eMap); // Pares de clave y valor
+    let unique = [...eMapArr.values()]; // Conversión a un array
     return `Unique: ${unique.length}`
 }
 
 export const brokenLinks = (e) => {
-    let eBrokem = e.filter( item => item.message === 'Fail');
-    return `Broken: ${eBrokem.length}`
+    let eBroken = e.filter( item => item.message === 'Fail');
+    return `Broken: ${eBroken.length}`
 }
 
 // mdLinks(rutaPrueba, {validate:true})
