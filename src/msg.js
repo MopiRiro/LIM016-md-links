@@ -12,7 +12,9 @@ But also you can write only mdLinks <route> and you will obtain the link, its te
 ╠══════════════════════════════════════╬═══════════════════════════════════════════════════════════════════════════════╣
 ║ ${colors.green('--stats')}                              ║ Show the total links and the unique links.                                    ║
 ╠══════════════════════════════════════╬═══════════════════════════════════════════════════════════════════════════════╣
-║ ${colors.green('--stats --validate')}                   ║ Show the total, unique and broken links.                                      ║
+║ ${colors.green('--stats --validate')}                   ║ Show the total, unique and broken links.                                   
+╠══════════════════════════════════════╬═══════════════════════════════════════════════════════════════════════════════╣
+║ ${colors.green('--validate --stats')}                   ║ Show the total, unique and broken links.
 ╚══════════════════════════════════════╩═══════════════════════════════════════════════════════════════════════════════╝
 ` ;
 
