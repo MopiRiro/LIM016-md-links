@@ -4,94 +4,94 @@
 ![imagen1](img/banner.JPG)
 ***
 
-## 1. Preámbulo
+## 1. Preamble
 
-Markdown es un lenguaje de marcado ligero muy popular entre developers. Es usado en muchísimas plataformas que
-manejan texto plano (GitHub, foros, blogs, ...), y es muy común encontrar varios archivos en ese formato en cualquier tipo de repositorio.
+Markdown is a very popular lightweight markup language among developers. It is used on many platforms
+they handle plain text (GitHub, forums, blogs, ...), and it is very common to find several files in that format in any type of repository.
 
-Estos archivos `Markdown` normalmente contienen _links_ (vínculos/ligas) que muchas veces están rotos o ya no son válidos y eso perjudica mucho el valor de la información que se quiere compartir.
+These `Markdown` files usually contain _links_ (links) that are often broken or no longer valid, and that greatly damages the value of the information that you want to share.
 
-## 2. Resumen del proyecto
+## 2. Project summary
 
 La librería Md-mocgor se encarga de verificar links de un archivo Markdown, mostrando reportes estadísticos de enlaces totales, rotos o no válidos.
 
-## 3. Diagramas de flujo
-### Diagrama de flujo API
+## 3. Flowcharts
+### Flowcharts API
 ![imagen2](img/api.jpg)
 
 
-### Diagrama de flujo CLI
+### Flowcharts CLI
 ![imagen3](img/cli.JPG)
 
-## 4. Instalación
 
+## 4. Installation
 
-Para la instalación de esta libreria sera necesario ejecutar el siguiente comando en tu terminal
+For the installation of this library it will be necessary to execute the following command line in your terminal
 
 ``` js
 npm i md-mocgor
 ```
 
-## 5. Guía de uso 
+## 5. User guide
 ### Welcome to Md-Links
 ``` js
 md-mocgor
 ```
 ![imagen4](img/welcomeToMdLInks.JPG)
 
-### Cuando ingresas el comando --help
+### When you enter the command --help
 ``` js
 md-mocgor --help
 ```
 ![imagen5](img/cliHelp.JPG)
 
-### Cuando ingresas la ruta
+### When you enter the path
 
 ``` js
 md-mocgor ./pruebas
 ```
 ![imagen6](img/withRoute.JPG)
 
-### Cuando ingresas una ruta no válida
+### When you enter an invalid path
 
 ``` js
 md-mocgor ../routeFail
 ```
 ![imagen7](img/routeFail.JPG)
 
-### Cuando ingresas una ruta que no tiene links
+### When you enter a route that has no links
 ``` js
 md-mocgor ./pruebas/prueba.md
 ```
 ![imagen8](img/noFoundLinks.JPG)
 
-### Cuando ingresas una ruta válida con opcion --validate
+### When you enter a valid path with opcion --validate
 ``` js
 md-mocgor ./pruebas --validate
 ```
-[imagen9](img/cliValidate.JPG)
+![imagen9](img/cliValidate.JPG)
 
-### Cuando ingresas una ruta válida con opcion --stats
+### When you enter a valid path with opcion --stats
 ``` js
 md-mocgor ./pruebas --stats
 ```
-[imagen10](img/cliStats.JPG)
+![imagen10](img/cliStats.JPG)
 
-### Cuando ingresas una ruta válida con opcion --stats --validate 
+### When you enter a valid path with --stats --validate 
 ``` js
 md-mocgor ./pruebas --stats --validate
 ```
-[imagen11](img/cliStatsValidate.JPG)
+![imagen11](img/cliStatsValidate.JPG)
 
-### Cuando ingresas una ruta válida con opcion --validate --stats
+### When you enter a valid path with --validate --stats
 ``` js
 md-mocgor ./pruebas --validate --stats 
 ```
-[imagen12](img/cliStatsValidate.JPG)
+![imagen12](img/cliStatsValidate.JPG)
 
-### Cuando ingresas una ruta válida con opcion validate mal escrito
+### When you enter a valid path with an invalid option
 
 ``` js
 md-mocgor ./pruebas --valida
 ```
-[imagen13](img/cliInvalid.JPG)
+![imagen13](img/cliInvalid.JPG)
