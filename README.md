@@ -34,6 +34,12 @@ npm i md-mocgor
 ```
 
 ## 5. Guía de uso 
+### Bienvenida a Md-Links
+``` js
+md-mocgor
+```
+![imagen4](img/welcomeToMdLInks.JPG)
+
 ### Cuando ingresas la ruta
 ### Cuando ingresas una ruta no válida
 ### Cuando ingresas una ruta que no tiene links

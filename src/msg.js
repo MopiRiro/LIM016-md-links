@@ -26,6 +26,16 @@ export const banner = colors.rainbow(
     })
   );
 
+  export const welcomeBanner = colors.rainbow(
+    figlet.textSync("Welcome To", {
+      font: "Chunky", //Bubble Fuzzy Rectangles Chunky Crazy Cybermedium
+      horizontalLayout: "default",
+      verticalLayout: "default",
+      width: 80,
+      whitespaceBreak: true,
+    })
+  );
+
 export const moreInfoMsg = `
 ═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 ${colors.red("Invalid command. To be able to show the mode of use and the existing commands in the library use 'md-mocgor --help'")}

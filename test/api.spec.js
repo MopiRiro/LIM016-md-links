@@ -10,8 +10,6 @@ import {
   readFilePath,
   filesExtensionMdPath,
   getLinksWithProperties,
-  getLinkStatus,
-  checkIfItHasLinks,
 } from '../src/api.js';
 
 const routeRelativeTest = './pruebas';

@@ -5,7 +5,8 @@ import { argv } from 'process';
 import { 
   helpMsg, 
   banner, 
-  moreInfoMsg
+  moreInfoMsg,
+  welcomeBanner
 } from "./msg.js";
 import { 
   optionValidateFalse,
@@ -42,6 +43,8 @@ const arrayCli = argv;
 
 // SI no se ingresa nada
 if(arrayCli.length===2){
+  console.log(welcomeBanner);
+  console.log(banner);
   console.log(colors.yellow(moreInfoMsg));
 }
 else if(arrayCli.length===3 && arrayCli[2]=== '--help'){

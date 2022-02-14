@@ -1,3 +1,4 @@
+import colors from 'colors';
 import {
     existPath,
     convertAbsolutePath,
@@ -24,34 +25,6 @@ import {
 // console.log(getLinksWithProperties(rutaPrueba));
 // console.log(getLinkStatus(getLinksWithProperties(rutaPrueba)));
 
-// if(!existPath(rutaPruebaFalla)){
-//     console.log('This route does not exist');
-// }
-
-// if(existPath(rutaPrueba)) {
-//     // console.log(validateAbsolutePath(rutaPrueba));
-//     const pathAbsolute = convertAbsolutePath(rutaPrueba);
-//     // console.log(pathAbsolute);
-//     if(directoryPath(pathAbsolute)){
-//        const arrayFileExtensionMdPath = filesExtensionMdPath(pathAbsolute);
-//         if(arrayFileExtensionMdPath.length > 0){
-//            const arrayLinksWithProperties = getLinksWithProperties(pathAbsolute);
-//         //    console.log(arrayLinksWithProperties);
-//            const arrayWithStatus = getLinkStatus(arrayLinksWithProperties);
-//            arrayWithStatus.then((res) => {
-//                 console.log(res);
-//            })
-//         }else{
-//             console.log('no hay links')
-//         }
-//     }else if(filePath(pathAbsolute)){
-//         const arrayLinksWithProperties = getLinksWithProperties(pathAbsolute);
-//         console.log('si es archivo', arrayLinksWithProperties);
-//     }
-// } else {
-//     console.log('Ruta no existe');
-// }
-
 export const mdLinks = (path,options) => {
     return new Promise((resolve,reject) => {
         if(existPath(path)) {
@@ -65,7 +38,7 @@ export const mdLinks = (path,options) => {
                 }else if(arrayFileExtensionMdPath.length > 0 && options.validate){
                     resolve(getLinkStatus(arrayLinksWithProperties));
                 } else{
-                    reject('no hay archivos')
+                    reject(colors.bgRed('No files found'))
                 }
             }else if(filePath(pathAbsolute)){
                 if(checkIfItHasLinks>0 && !options.validate){
@@ -73,11 +46,11 @@ export const mdLinks = (path,options) => {
                 }else if(checkIfItHasLinks>0 && options.validate){
                     resolve(getLinkStatus(arrayLinksWithProperties));
                 }else {
-                    reject('no hay links')
+                    reject(colors.bgRed('No link found'))
                 }
             }
         } else {
-            reject('Ruta no existe');
+            reject(colors.bgRed('This route does not exist'));
         }
     }
     );
