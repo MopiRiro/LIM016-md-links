@@ -1,54 +1,71 @@
 #!/usr/bin/env node
 import colors from 'colors';
 import chalk from "chalk";
-import figlet from "figlet";
 import { argv } from 'process';
-import {mdLinks} from './md-links.js';
-
-// import {
-//   totalLinks,
-//   uniqueLinks,
-//   brokenLinks,
-// } from './cli-functions.js'
-
-
-  export const banner = colors.rainbow(
-    figlet.textSync("MD - LINKS", {
-      font: "Chunky", //Bubble Fuzzy Rectangles Chunky Crazy Cybermedium
-      horizontalLayout: "default",
-      verticalLayout: "default",
-      width: 80,
-      whitespaceBreak: true,
-    })
-  );
-
-console.log(banner);
+import { 
+  helpMsg, 
+  banner, 
+  moreInfoMsg
+} from "./msg.js";
+import { 
+  optionValidateFalse,
+  optionValidateTrue,
+  optionStats,
+  optionStatsValidate,
+  } from './cli-functions.js';
 
 export const msjError = chalk.black.bgRed.bold('ERROR');
-// console.log(msjError);
-// const log = console.log;
-// Combine styled and normal strings
-// log(chalk.blue('Hello') + ' World' + chalk.red('!'));
 
 
-// const argvD = argv.slice(2);
-// const arrayArgv = argv;
-// console.log(arrayArgv);
-// const arrayPrueba = arrayArgv[2];
 
-// console.log(arrayPrueba);
+// const arrarCli = argv.slice(2);
+// const arrarCli = argv;
+
+
+// console.log(arrarCli);
+
+
+// const pathCli = argv[2];
+
+
+// console.log(pathCli);
+
+
+
+//  const arrayCli = argv;
+//  console.log(arrayCli);
 //node src/cli.js one two=three four
 //Devuelve un array con la opcion [ 'one', 'two=three', 'four' ]
+const pathCli = argv[2];
+const arrayCli = argv;
+// console.log(arrayCli);
 
-
-
-export const cli = (argvCli) => {
-  if(argvCli.length===1){
-      mdLinks((argv[1]), {validate:false})
-      .then((res)=> {
-        console.log(res);
-      }).catch((e)=>console.log(e));
-    }
-};
-
-
+// SI no se ingresa nada
+if(arrayCli.length===2){
+  console.log(colors.yellow(moreInfoMsg));
+}
+else if(arrayCli.length===3 && arrayCli[2]=== '--help'){
+  console.log(colors.yellow(helpMsg));
+}
+else if(arrayCli.length===3){
+  console.log(banner);
+  optionValidateFalse(pathCli);
+}
+else if(arrayCli.length===4 && arrayCli[3]==='--validate'){
+  console.log(banner);
+  optionValidateTrue(pathCli);
+}
+else if(arrayCli.length===4 && arrayCli[3]==='--stats'){
+  console.log(banner);
+  optionStats(pathCli);
+}
+else if(arrayCli.length===5 && arrayCli[3]==='--stats' && arrayCli[4]==='--validate'){
+  console.log(banner);
+  optionStatsValidate(pathCli);
+}
+else if(arrayCli.length===5 && arrayCli[3]==='--validate' && arrayCli[4]==='--stats'){
+  console.log(banner);
+  optionStatsValidate(pathCli);
+} else {
+  console.log(moreInfoMsg);
+}

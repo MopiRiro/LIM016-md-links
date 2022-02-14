@@ -1,20 +1,17 @@
 import {
     existPath,
-    validateAbsolutePath,
     convertAbsolutePath,
     directoryPath,
     filePath,
-    mdExtension,
-    readFilePath,
     filesExtensionMdPath,
     getLinksWithProperties,
     getLinkStatus,
     checkIfItHasLinks,
 } from '../src/api.js';
 
-const rutaPrueba = './pruebas';
-const rutaPruebaFalla = './pruebas/...';
-const segundaRutaPrueba = './pruebas/subPrueba/subPrueba.md';
+// const rutaPrueba = './pruebas';
+// const rutaPruebaFalla = './pruebas/...';
+// const segundaRutaPrueba = './pruebas/subPrueba/subPrueba.md';
 
 // console.log(existPath(rutaPrueba));
 // console.log(validateAbsolutePath(rutaPrueba));
