@@ -3,9 +3,9 @@ import { isAbsolute, resolve, extname} from "path";
 import fetch from "node-fetch";
 
 //Rutas de prueba
-const rutaPrueba = './pruebas';
-const segundaRutaPrueba = './pruebas/prueba.md';
-const terceraRutaPrueba = './pruebas/subPrueba/subPrueba.md';
+// const rutaPrueba = './pruebas';
+// const segundaRutaPrueba = './pruebas/prueba.md';
+// const terceraRutaPrueba = './pruebas/subPrueba/subPrueba.md';
 
 //FUNCION 1: Comprobar si existe la ruta
 //Returns true if the path exists, false otherwise
@@ -41,7 +41,7 @@ export const filePath = (ePath) => statSync(ePath).isFile();
 // console.log(filePath(rutaPrueba));
 
 //Valida la extension del archivo '.md'
-export const mdExtension = (ePath) => extname(ePath);
+export const mdExtension = (ePath) => extname(ePath) === ".md";
 // console.log(mdExtension(segundaRutaPrueba));
 
 
@@ -60,12 +60,12 @@ export const filesExtensionMdPath = (ePath) => {
             mdArray.push(filesExtensionMdPath(iPath));
             }      
         );
-    } else if (mdExtension(ePath) === ".md"){
+    } else if (mdExtension(ePath)){
         mdArray.push(convertAbsolutePath(ePath));
     }
     return mdArray.flat(Infinity);
 };
-//console.log(filesExtensionMdPath(rutaPrueba));
+// console.log(filesExtensionMdPath(rutaPrueba));
 
 //FUNCION 7: Extraer links
 //Expresiones regulares para reconocer la estrucutra de los links
@@ -95,7 +95,7 @@ export const getLinksWithProperties = (ePath) => {
     })
     return arrayPrueba;
 };
-    console.log(getLinksWithProperties(rutaPrueba));
+// console.log(getLinksWithProperties(rutaPrueba));
 
 
 //FUNCION 8: Validar si tiene links
@@ -111,29 +111,6 @@ export const getLinksWithProperties = (ePath) => {
 //         } 
 //     }
 //   );
-
-// export const getLinkStatus = (arrayLinks) => {
-//       const arrayStatusLinks = arrayLinks.map((e)=> fetch(e.href).then(data =>{   
-//                 // const arrayPropertiesStatus = {
-//                 //     href : e.href,
-//                 //     text : e.text,
-//                 //     file : e.file,
-//                 //     status : data.status,
-//                 //     message : (data.status>= 200 && data.status<=299) ? 'OK' : 'FAIL',
-//                 // };
-//                 // console.log(arrayPropertiesStatus);
-//                 // return arrayPropertiesStatus;
-            
-//             })
-//             .catch((error) => console.log(error));
-//             )
-            
-//       return Promise.all(arrayStatusLinks);
-      
-//   };
-// // console.log(getLinkStatus(getLinksWithProperties(rutaPrueba)));
-
-
 export const getLinkStatus = (arrayLinks) => {
     const arrLink = arrayLinks.map((linkArr) => fetch(linkArr.href).then((res) => {
       //  console.log(res)
@@ -151,6 +128,7 @@ export const getLinkStatus = (arrayLinks) => {
   };
   
 //   console.log(getLinkStatus(getLinksWithProperties(rutaPrueba)));
+
 
 export const checkIfItHasLinks = (pathLink) =>{
     const justURL = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;

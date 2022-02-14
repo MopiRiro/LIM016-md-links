@@ -25,7 +25,7 @@
   "scripts": {
     "eslint": "eslint --ext .js src/",
     "pretest.out": "npm run eslint",
-    "test": "set \"NODE_OPTIONS=--experimental-vm-modules\" && npx jest --coverage --verbose"
+    "test": "node --experimental-vm-modules  node_modules/jest/bin/jest.js --env=node --coverage --verbose"
   },
   "keywords": [
     "validator",

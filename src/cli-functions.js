@@ -1,10 +1,10 @@
 // import {existPath} from './api.js';
 // console.log(existPath('./pruebas'));
-import {mdLinks} from "./md-links.js";
+// import {mdLinks} from "./md-links.js";
 
-const rutaPrueba = './pruebas';
-const rutaPruebaFalla = './pruebas/...';
-const segundaRutaPrueba = './pruebas/subPrueba/subPrueba.md';
+// const rutaPrueba = './pruebas';
+// const rutaPruebaFalla = './pruebas/...';
+// const segundaRutaPrueba = './pruebas/subPrueba/subPrueba.md';
 
 
 // getLinkStatus(getLinksWithProperties(rutaPrueba)).then((res)=> {
@@ -32,6 +32,7 @@ export const brokenLinks = (e) => {
 
 // mdLinks(rutaPrueba, {validate:true})
 // .then((res)=> {
+//     console.log(res);
 //     console.log(totalLinks(res));
 //     console.log(uniqueLinks(res));
 //     console.log(brokenLinks(res));
