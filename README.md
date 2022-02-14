@@ -41,7 +41,7 @@ md-mocgor
 
 ### Cuando ingresas el comando --help
 ``` js
-md-mocgor
+md-mocgor --help
 ```
 ![imagen5](img/cliHelp.JPG)
 
