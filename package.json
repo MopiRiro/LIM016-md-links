@@ -1,6 +1,7 @@
 {
-  "name": "md-pil",
+  "name": "md-mocgor",
   "version": "0.1.0",
+  "description": "The Md-mocgor library is responsible for verifying links from a Markdown file",
   "type": "module",
   "dependencies": {
     "chalk": "^5.0.0",
@@ -36,7 +37,7 @@
   "license": "MIT",
   "homepage": "https://github.com/MopiRiro/LIM016-md-links.git",
   "repository": {
-    "type": "string",
+    "type": "git",
     "url": "https://github.com/MopiRiro/LIM016-md-links.git"
   },
   "bin": {

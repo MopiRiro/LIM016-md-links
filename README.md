@@ -1,4 +1,4 @@
-# Markdown Links
+# Markdown Links 📂
 
 ***
 ![imagen1](img/banner.JPG)
@@ -13,7 +13,7 @@ These `Markdown` files usually contain _links_ (links) that are often broken or 
 
 ## 2. Project summary
 
-La librería Md-mocgor se encarga de verificar links de un archivo Markdown, mostrando reportes estadísticos de enlaces totales, rotos o no válidos.
+The Md-mocgor library is responsible for verifying links from a Markdown file, showing statistical reports of total, broken or invalid links.
 
 ## 3. Flowcharts
 ### Flowcharts API
@@ -95,3 +95,36 @@ md-mocgor ./pruebas --validate --stats
 md-mocgor ./pruebas --valida
 ```
 ![imagen13](img/cliInvalid.JPG)
+
+
+## 6. Checklist
+
+### General
+
+* [ ] Puede instalarse via `npm install --global <github-user>/md-links`
+
+### `README.md`
+
+* [X] Un board con el backlog para la implementación de la librería.
+* [X] Documentación técnica de la librería.
+* [X] Guía de uso e instalación de la librería
+
+### API `mdLinks(path, opts)`
+
+* [X] El módulo exporta una función con la interfaz (API) esperada.
+* [X] Implementa soporte para archivo individual
+* [X] Implementa soporte para directorios
+* [X] Implementa `options.validate`
+
+### CLI
+
+* [X] Expone ejecutable `md-links` en el path (configurado en `package.json`)
+* [X] Se ejecuta sin errores / output esperado
+* [X] Implementa `--validate`
+* [X] Implementa `--stats`
+
+### Pruebas / tests
+
+* [X] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
+  lines, y branches.
+* [X] Pasa tests (y linters) (`npm test`).
